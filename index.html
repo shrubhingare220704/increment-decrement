@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantity Increment Decrement</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 10px;
+        height: 400px;
+        width: 300px;
+        background-color: #cccccc;
+        border-radius: 30px;
+        border: 1px #595959 solid;
+    }
+
+    .product-img {
+        display: block;
+        height: 250px;
+        margin: 20px auto;
+        border-radius: 20px;
+        border: 1px solid #bfbfbf;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .quantity-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quan-icon {
+        height: 20px;
+        margin: 2px 10px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <img src="./headphone.jpg" id="product-img" class="product-img">
+        <p>
+        <h4 class="text-center">V-Moda Crossfade Wireless Over-Ear Headphone</h4>
+        </p>
+
+        <div class="quantity-container">
+            <img src="./decrement.png" alt="" class="quan-icon" onclick="dec()">
+            <span id="quantity">1</span>
+            <img src="./increment.png" alt="" class="quan-icon" onclick="inc()">
+        </div>
+    </div>
+
+    <script>
+        const quantityElement = document.getElementById('quantity');
+
+        function inc() {
+            let quantity = parseInt(quantityElement.innerText);
+            quantityElement.innerText = ++quantity;
+        }
+
+        function dec() {
+            let quantity = parseInt(quantityElement.innerText);
+            if(quantity > 1){
+                quantityElement.innerText = --quantity;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
